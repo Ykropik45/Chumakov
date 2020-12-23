@@ -21,6 +21,7 @@ Class Kvadratnoe extends Lineynoe implements EquationInterface
 
         if($discriminant > 0)
         {
+            MyLog::log('This is square Equation');
             $squareDiscriminant = sqrt($discriminant);
             return $this->x = array((-$b + $squareDiscriminant) / (2 * $a), (-$b - $squareDiscriminant) / (2 * $a));
         }
@@ -28,6 +29,10 @@ Class Kvadratnoe extends Lineynoe implements EquationInterface
         {
             return $this->x =  array(-$b / (2 * $a));
         }
-        return null;
+        if($discriminant < 0)
+        {
+            throw new ChumakovException('The equation has no solutions');
+        }
+        throw new ChumakovException('No roots');
 	}
 }

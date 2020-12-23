@@ -10,8 +10,9 @@ Class Lineynoe
     {
 		if ($a == 0)
 		{
-		  return null;
+		    throw new ChumakovException('No roots');
 		}
+        MyLog::log('This is line equation');
 		return $this->x= array(-$b / $a);
 	}
 }
