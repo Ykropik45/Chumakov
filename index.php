@@ -1,39 +1,20 @@
-<?php 
-Class A {
-	public function solve ($a,$b) {
-		if ($a == 0){
-		  return NULL;
-		}
-		return $this->X=-($b/$a);
-	}
-	protected $X;
-}
-Class B extends A {
-    protected function dis($a, $b, $c) {
-		$x = ($b**2)-4*$a*$c;
-		return $x;
-	}
-	public function qu_solve($a, $b, $c){
-		$x = $this->solve($b,$c);
-		if($a == 0){
-			return $this->solve($b,$c);
-		}
-		if ($x > 0) {
-			return $this->X=array (
-				-($b+sqrt($b**2-4*$a*$c)/2*$a),
-				-($b-sqrt($b**2-4*$a*$c)/2*$a)
-			);
-		}
-		
-		if ($x == 0) {
-			return $this->X=array(-($b/(2*$a)));
-		}
-		return $this->X=NULL;
-	}
-}
-	
-$a = new A();
-$b = new B();
-$a->solve(1,2);
-$b->qu_solve(0,2,1);
-		
+<?php
+
+use chumakov\Kvadratnoe;
+use chumakov\Lineynoe;
+
+ini_set("display_errors", 1);
+error_reporting(-1);
+
+require_once('core\EquationInterface.php');
+require_once('core\LogInterface.php');
+require_once('core\LogAbstract.php');
+
+require_once('chumakov\Lineynoe.php');
+require_once('chumakov\Kvadratnoe.php');
+
+$lineEq = new Lineynoe();
+var_dump($lineEq->solveLine(4, 2));
+
+$squareEq = new Kvadratnoe();
+var_dump($squareEq->solve(1, 17, -18));
