@@ -17,9 +17,12 @@ class MyLog extends LogAbstract implements LogInterface
     }
     public function _write()
     {
+        $dateLog = date('d.m.Y_H.i.s.v');
         foreach ($this->log as $v)
         {
             echo $v . "\n\r";
+            file_put_contents(__DIR__ . "\..\log\\$dateLog.log", $v . PHP_EOL, FILE_APPEND);
         }
+        echo "\n\rLog: $dateLog";
     }
 }

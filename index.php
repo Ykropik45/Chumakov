@@ -17,17 +17,22 @@ require_once('chumakov\Lineynoe.php');
 require_once('chumakov\Kvadratnoe.php');
 
 try {
+    $dir = 'log\\';
+    if (!file_exists($dir)) {
+        mkdir($dir, 0700);
+    }
+
+    $file_handle = fopen("version", "r");
+    MyLog::log("Version program: " . fgets($file_handle));
+    fclose($file_handle);
+
     echo "Enter 3 parameters: a, b, c \n\r";
 
-    for ($i = 1; $i < 4; $i++) {
-        echo "Введите " . $i . " аргумент: ";
-        $values[] = readline();
-    }
-    $a = $values[0];
-    $b = $values[1];
-    $c = $values[2];
+    $a = (float)readline();
+    $b = (float)readline();
+    $c = (float)readline();
 
-    MyLog::log("\n\rThe equation is introduced:" . " $a*x^2 + $b*x + $c = 0");
+    MyLog::log("The equation is introduced:" . " $a*x^2 + $b*x + $c = 0");
 
     $kvadratEq = new Kvadratnoe();
     $result =$kvadratEq->solve($a, $b, $c);
