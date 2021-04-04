@@ -1,20 +1,12 @@
 <?php
+ini_set("display_errors", 1);
+error_reporting(-1);
 
 use chumakov\ChumakovException;
 use chumakov\MyLog;
 use chumakov\Kvadratnoe;
 
-ini_set("display_errors", 1);
-error_reporting(-1);
-
-require_once('core\EquationInterface.php');
-require_once('core\LogInterface.php');
-require_once('core\LogAbstract.php');
-
-require_once('chumakov\ChumakovException.php');
-require_once('chumakov\MyLog.php');
-require_once('chumakov\Lineynoe.php');
-require_once('chumakov\Kvadratnoe.php');
+require_once __DIR__ . './vendor/autoload.php';
 
 try {
     $dir = 'log\\';
@@ -37,7 +29,7 @@ try {
     $kvadratEq = new Kvadratnoe();
     $result =$kvadratEq->solve($a, $b, $c);
 
-    MyLog::log('Equation roots: ' . implode('; ', $result));
+    MyLog::log(implode('; ', $result) . 'Equation roots: ');
 } catch (ChumakovException $e) {
     MyLog::log($e->getMessage());
 }

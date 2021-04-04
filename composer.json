@@ -1,0 +1,36 @@
+{
+    "name": "ykropik45/chumakov",
+    "description": "igor project",
+    "type": "project",
+	"license": "-",
+	"authors": [
+		{
+			"name": "Igor Chumakov",
+			"email": "Chumakov.goga@mail.ru"
+		}
+	],
+	
+	"minimum-stability": "dev",
+	
+	"scripts": {
+    "post-install-cmd": [
+        "git symbolic-ref --short -q HEAD>version"
+    ]
+  },
+		
+    "require": {
+		 "ykropik45/chumakov2": "1.0",
+		 "ext-readline": "*"
+	},
+
+	"repositories": [
+		{	
+			"type": "git",
+			"url": "https://github.com/rok9ru/trpo-core"
+		}, 
+		{	
+			"type": "git",
+			"url": "https://github.com/Ykropik45/Chumakov2.git"
+		}
+	]
+}
