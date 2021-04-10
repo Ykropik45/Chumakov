@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e1625a72796b6d3a089820bb5cd9caa4",
+    "content-hash": "feef4098bce44a54a3e591271dd8d445",
     "packages": [
         {
             "name": "rok9ru/trpo-core",
@@ -34,14 +34,17 @@
         },
         {
             "name": "ykropik45/chumakov2",
-            "version": "1.0",
+            "version": "2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Ykropik45/Chumakov2.git",
-                "reference": "d65def18930ed7dad3b9a7c93c7ac69901e23f46"
+                "reference": "e8f00189a70f995c4481b7144647069f9bcbf9ae"
             },
             "require": {
                 "rok9ru/trpo-core": "2.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^9"
             },
             "type": "library",
             "autoload": {
@@ -59,7 +62,7 @@
                 }
             ],
             "description": "library",
-            "time": "2021-04-04T09:26:47+00:00"
+            "time": "2021-04-10T07:20:02+00:00"
         }
     ],
     "packages-dev": [],

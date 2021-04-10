@@ -19,7 +19,7 @@
   },
 		
     "require": {
-		 "ykropik45/chumakov2": "1.0",
+		 "ykropik45/chumakov2": "2.0",
 		 "ext-readline": "*"
 	},
 

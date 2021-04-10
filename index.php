@@ -14,10 +14,6 @@ try {
         mkdir($dir, 0700);
     }
 
-    $file_handle = fopen("version", "r");
-    MyLog::log("Version program: " . fgets($file_handle));
-    fclose($file_handle);
-
     echo "Enter 3 parameters: a, b, c \n\r";
 
     $a = (float)readline();
@@ -29,7 +25,7 @@ try {
     $kvadratEq = new Kvadratnoe();
     $result =$kvadratEq->solve($a, $b, $c);
 
-    MyLog::log(implode('; ', $result) . 'Equation roots: ');
+    MyLog::log('Equation roots: ' . implode('; ', $result));
 } catch (ChumakovException $e) {
     MyLog::log($e->getMessage());
 }
